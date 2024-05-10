@@ -1,0 +1,189 @@
+//=================================
+//! .footer
+.footer {
+	position: relative;
+	@include adaptiveValue("padding-top", 70, 20);
+	@include adaptiveValue("padding-bottom", 90, 20);
+	// .footer__image-ibg
+	&__image-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	// .footer__contact
+	&__contact {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 144, 30);
+		}
+	}
+	// .footer__body
+	&__body {
+	}
+}
+
+.contact {
+	position: relative;
+
+	// .contact__container
+	&__container {
+		position: relative;
+	}
+	// .contact__form
+	&__form {
+	}
+}
+.form {
+	background-color: $white;
+	@include adaptiveValue("padding-top", 52, 20);
+	@include adaptiveValue("padding-bottom", 32, 20);
+	@include adaptiveValue("padding-right", 50, 15);
+	@include adaptiveValue("padding-left", 50, 15);
+
+	// .form__body
+	&__body {
+		border: rem(1) solid $gray-ec;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 34, 20);
+		}
+	}
+	// .form__items
+	&__items {
+		max-width: 50%;
+		border-right: rem(1) solid $gray-ec;
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			border-right: none;
+		}
+	}
+	// .form__item
+	&__item {
+		&:not(:last-child) {
+			border-bottom: rem(1) solid $gray-ec;
+		}
+	}
+	// .form__label
+	&__label {
+		@extend .section-page__title;
+		@include adaptiveValue("padding-top", 30, 10);
+		@include adaptiveValue("padding-bottom", 30, 10);
+		@include adaptiveValue("padding-right", 25, 10);
+		@include adaptiveValue("padding-left", 25, 10);
+	}
+	// .form__input
+	&__input {
+	}
+	// .form__footer
+	&__footer {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: rem(20);
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	// .form__checkbox
+	&__checkbox {
+	}
+	// .form__button
+	&__button {
+	}
+}
+
+.body-footer {
+	position: relative;
+	color: $white;
+	// .body-footer__container
+	&__container {
+	}
+	// .body-footer__wrapper
+	&__wrapper {
+		max-width: rem(970);
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 70, 20, 1140, 768, 1);
+		@include adaptiveValue("margin-left", 49, 0, 1140, 998, 1);
+		@include adaptiveValue("margin-righ", 49, 0, 1140, 998, 1);
+		@media (max-width: $tablet) {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+			@include adaptiveValue("row-gap", 80, 30, 998, 320, 1);
+		}
+	}
+	// .body-footer__info
+	&__info {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		flex: 1 1 auto;
+		@include adaptiveValue("gap", 83, 20, 1140, 768, 1);
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			@include adaptiveValue("gap", 30, 20, 768, 320, 1);
+		}
+	}
+	// .body-footer__list
+	&__list {
+		display: grid;
+		@include adaptiveValue("gap", 50, 30, 1140, 768, 1);
+		@media (max-width: $mobile) {
+			@include adaptiveValue("gap", 30, 20, 768, 320, 1);
+		}
+	}
+	// .body-footer__item
+	&__item {
+		a {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	// .body-footer__link
+	&__link {
+		display: inline-flex;
+		align-items: flex-start;
+		font-weight: 500;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: 170%;
+		text-transform: capitalize;
+		svg {
+			margin-top: rem(3);
+			flex: 0 0 rem(30);
+			@include adaptiveValue("flex-basis", 30, 20);
+			@include adaptiveValue("width", 30, 20);
+			@include adaptiveValue("height", 30, 20);
+		}
+		span {
+			@include adaptiveValue("padding-left", 25, 10);
+		}
+		small {
+			line-height: 150%;
+			display: block;
+			@include adaptiveValue("font-size", 16, 14);
+		}
+	}
+	// .body-footer__logo
+	&__logo {
+		max-width: rem(192);
+		display: block;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: $tablet) {
+			align-self: center;
+			@include adaptiveValue("max-width", 192, 100, 998, 320, 1);
+		}
+	}
+	// .body-footer__copyright
+	&__copyright {
+		@include adaptiveValue("padding-top", 138, 30);
+		font-weight: 400;
+		@include adaptiveValue("font-size", 12, 10);
+		line-height: 150%;
+		letter-spacing: 0.03em;
+		text-align: center;
+	}
+}

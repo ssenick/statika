@@ -1,0 +1,51 @@
+//<INPUT>
+// Снипет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	font-weight: 400;
+	padding-top: rem(8);
+	padding-bottom: rem(8);
+	@include adaptiveValue("padding-right", 22, 10);
+	@include adaptiveValue("padding-left", 22, 10);
+	@include adaptiveValue("font-size", 16, 14);
+	line-height: 150%;
+	letter-spacing: 0.03em;
+	color: $gray-54;
+	&::placeholder {
+		color: $gray-c5;
+	}
+	&:focus-visible {
+		outline: none;
+	}
+
+	&._form-focus {
+	}
+	&._form-error {
+		&::placeholder {
+			color: #e76f6f;
+			font-weight: 600;
+		}
+	}
+}
+.form__error {
+	display: none;
+}
+textarea.input {
+	resize: none;
+	padding-top: rem(8);
+	padding-bottom: rem(8);
+	@include adaptiveValue("padding-right", 22, 10);
+	@include adaptiveValue("padding-left", 22, 10);
+	border-top: rem(1) solid $gray-ec;
+	@include adaptiveValue("height", 172, 100);
+}
